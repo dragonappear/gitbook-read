@@ -69,66 +69,39 @@ BigInteger.probablePrime(int,int,random);
 
 <br><br><br>
 
-## 정적 팩토리 메서드 네이밍
+### 정적 팩토리 메서드 네이밍
 
-### `from`
+- `from`
+  - 매개변수 하나를 받아서 해당 타입의 ㄷ인스턴스를 반환하는 형변환 메서드
+  - `Date d = Date.from(instant);`
 
-매개변수 하나를 받아서 해당 타입의 ㄷ인스턴스를 반환하는 형변환 메서드
+- `of`
+  - 여러 매개변수를 받아 적합한 타입의 인스턴스를 반환하는 집계 메서드
+  - `Set<Rank> cards = EnumSet.of(JACK,QUEEN,KING);`
 
-`Date d = Date.from(instant);`
 
-<br>
+- `valueOf`
+  - `from`과 `of`의 더 자세한 버전
+  - `BigInteger prime = BigInteger.valueOf(Integer.MAX_VALUE);`
 
-### `of`
+- `instance`, `getInstance`
+  - (매개변수를 받는다면) 매개변수로 명시한 인스턴스를 반환하지만, **같은 인스턴스임을 보장하지는 않는다.**
+  - `StackWalker luke = StackWalker.getInstance(options);`
 
-여러 매개변수를 받아 적합한 타입의 인스턴스를 반환하는 집계 메서드
+- `create`, `newInstance`
+  - instance or getInstance 와 같지만, **매번 새로운 인스턴스를 생성해 반환함을 보장한다.**
+  - `Object newArray = Array.newInstance(classObject,arrayLen);`
 
-`Set<Rank> cards = EnumSet.of(JACK,QUEEN,KING);`
+- `getType`
+  - `getInstance`와 같으나, 생성할 클래스가 아닌 다른 클래스에 팩토리 메서드를 정의할 때 쓴다. `Type`은 팩토리 메서드가 반환할 객체의 타입이다
+  - `FileStore fs = Files.getFileStore(path);`
 
-<br>
 
-### `valueOf`
+- `newType`
+  - `newInstance`와 같으나, 생성할 클래스가 아닌 다른 클래스에 팩토리 메서드를 정의할 때 쓴다. `Type`은 팩토리 메서드가 반환할 객체의 타입이다
+  - `BufferedReader br = Files.newBufferedReader(path);`
 
-`from`과 `of`의 더 자세한 버전
 
-`BigInteger prime = BigInteger.valueOf(Integer.MAX_VALUE);`
-
-<br>
-
-### `instance`, `getInstance`
-
-(매개변수를 받는다면) 매개변수로 명시한 인스턴스를 반환하지만, **같은 인스턴스임을 보장하지는 않는다.**
-
-`StackWalker luke = StackWalker.getInstance(options);`
-
-<br>
-
-### `create`, `newInstance`
-
-instance or getInstance 와 같지만, **매번 새로운 인스턴스를 생성해 반환함을 보장한다.**
-
-`Object newArray = Array.newInstance(classObject,arrayLen);`
-
-<br>
-
-### `getType`
-
-`getInstance`와 같으나, 생성할 클래스가 아닌 다른 클래스에 팩토리 메서드를 정의할 때 쓴다. `Type`은 팩토리 메서드가 반환할 객체의 타입이다
-
-`FileStore fs = Files.getFileStore(path);`
-
-<br>
-
-### `newType`
-
-`newInstance`와 같으나, 생성할 클래스가 아닌 다른 클래스에 팩토리 메서드를 정의할 때 쓴다. `Type`은 팩토리 메서드가 반환할 객체의 타입이다
-
-`BufferedReader br = Files.newBufferedReader(path);`
-
-<br>
-
-### `type`
-
-`getType`와 `newType`의 간결한 버전
-
-`List<Complaint litany = Collections.list(legacyLitany);` 
+- `type`
+  - `getType`와 `newType`의 간결한 버전
+  - `List<Complaint litany = Collections.list(legacyLitany);` 
