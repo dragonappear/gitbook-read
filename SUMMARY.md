@@ -12,3 +12,9 @@
     - [#2 생성자에 매개변수가 많다면 빌더를 고려하라](java/effective-java-3rd/chapter2/02_consider_builder_when_many_parameters_exists.md)
     - [#3 private 생성자나 열거 타입으로 싱글턴임을 보증하라](java/effective-java-3rd/chapter2/03_gurantee_singletone.md)
     - [#4 인스턴스화를 막으려거든 private 생성자를 사용하라](java/effective-java-3rd/chapter2/04_use_private_when_avoiding_instance.md)
+
+### System Architecture
+
+- #### System Design Interview
+  - [키-값 저장소 설계](system-architecture/system-design-interview/06_key_value_repository_design.md)
+  - [분산 시스템을 위한 유일 ID 생성기 설계](system-architecture/system-design-interview/07_unique_id_generator_design.md)
