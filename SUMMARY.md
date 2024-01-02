@@ -16,5 +16,5 @@
 ### System Architecture
 
 - #### System Design Interview
-  - [키-값 저장소 설계](system-architecture/system-design-interview/06_key_value_repository_design.md)
-  - [분산 시스템을 위한 유일 ID 생성기 설계](system-architecture/system-design-interview/07_unique_id_generator_design.md)
+  - [키-값 저장소 설계](system-design/system-design-interview/00_key_value_repository_design.md)
+  - [분산 시스템을 위한 유일 ID 생성기 설계](system-design/system-design-interview/01_unique_id_generator_design.md)
